@@ -16,17 +16,20 @@
         <p class="lead">Total cases reported as of today</p>
     </div>
 </div>
+
 <div class="container">
-    <table class="table table-striped">
+    <table class="table">
         <tr>
             <th>Country</th>
             <th>Province</th>
             <th>Reported Cases</th>
+            <th>Changes since last day</th>
         </tr>
         <tr th:each="stat : ${locationStats}">
             <td th:text="${stat.country}"></td>
             <td th:text="${stat.state}"></td>
-            <td th:text="${stat.latestTotalCases}"></td>
+            <td th:text="${stat.latestTotalCases}">0</td>
+            <td th:text="${stat.diffFromPreviousDay}">0</td>
         </tr>
     </table>
 </div>
